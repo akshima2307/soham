@@ -1,0 +1,250 @@
+*, *:before, *:after {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.loading{
+	position: absolute;
+	top: 50%;  left: 50%;
+	transform: translate(-50%,-50%); 
+  }
+  .loading_div{
+	 width: 200px;  height: 300px;
+	 border-radius: 10px;
+	 background: #fff;
+	 animation: animate 2s infinite linear;
+  }
+  .loading_div > img{
+	width: 100%; height: 100%;
+	object-fit: cover;
+  }
+  .loading_para{
+	margin-top: 5rem;
+	text-align: center;
+	color: #3d3d3d;
+	font-size: 1.2rem;
+  }
+  
+  @keyframes animate{
+	  0%{
+		  transform: perspective(300px) rotateY(0);
+	  }
+	  50%{
+		  transform: perspective(300px) rotateY(180deg);
+	  }
+	  100%{
+		  transform: perspective(300px) rotateY(180deg);
+	  } 
+  }
+  
+
+:root {
+	font-size: 18px;
+	--cardW: 16em;
+	--cardH: 24em;
+	--cardZInc: 2em;
+}
+body {
+	font: 1em "Open Sans", sans-serif;
+	height: 100vh;
+	overflow: hidden;
+}
+
+main {
+	display: none;
+	margin: auto;
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+}
+.content{
+	background: white;
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 100;
+	text-align: center;
+	padding: 5rem 3rem;
+}
+.content > h1{
+	font-family: 'Dancing Script', cursive;
+	padding-top: 2rem;
+	font-size: 2.4rem;
+}
+.content > p{
+	font-size: 1rem;
+	margin: 1rem auto;
+	width: 80%;
+}
+.content > a{
+	display: block;
+    background: #e60023;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    margin-top: 7rem;
+}
+.content > img{
+	width: 4rem;
+}
+/* Grid */
+.cards, .stack {
+	transform-style: preserve-3d;
+}
+.cards {
+	--scroll: 0;
+	display: grid;
+	grid-template: repeat(36, var(--cardH)) / var(--cardW);
+	grid-gap: 1.5em;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) rotateX(45deg) rotateZ(45deg) translateY(-25%);
+	transform-origin: 50% 0;
+}
+
+/* Card hover */
+.stack:hover {
+	transform: translateZ(3rem);
+}
+/* Other card styles */
+.stack {
+	display: block;
+	position: relative;
+	perspective: 150rem;
+    -moz-perspective: 150rem;
+	transition: all .2s ease;
+}
+.card {
+	background-size: 200% 200%;
+	box-shadow: -1px -1px 0 rgba(0,0,0,0.2) inset;
+	color: #000;
+	position: absolute;
+	transition: all 0.3s;
+	width: 100%;
+	height: 100%;
+	transition: all .8s ease;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.top {
+	z-index: 4;
+	transform: rotateY(180deg);
+}
+.bottom {
+	transform: rotateY(0deg);
+	background: white;
+	position: relative;
+	border: 1px solid #999;
+}
+
+.top > img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.bottom > img{
+	position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    width: 6rem;
+    height: 8rem;
+    object-fit: contain;
+}
+
+/* Alter grid at breakpoints */
+@media screen and (min-width: 361px) {
+	.cards {
+		grid-template: repeat(18, var(--cardH)) / repeat(2, var(--cardW));
+	}
+}
+@media screen and (min-width: 641px) {
+	.cards {
+		grid-template: repeat(12, var(--cardH)) / repeat(3, var(--cardW));
+	}
+}
+@media screen and (min-width: 961px) {
+	.cards {
+		grid-template: repeat(9, var(--cardH)) / repeat(4, var(--cardW));
+	}
+}
+@media screen and (min-width: 1281px) {
+	.cards {
+		grid-template: repeat(8, var(--cardH)) / repeat(5, var(--cardW));
+	}
+}
+
+/* Dark mode optimization */
+@media screen and (prefers-color-scheme: dark) {
+	body {
+		background: #171711;
+	}
+}
+
+
+.main a {
+	padding-top: 60px;
+  }
+.main a span {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	width: 40px;
+	height: 60px;
+	margin-left: -15px;
+	border: 2px solid #fff;
+	border-radius: 50px;
+	box-sizing: border-box;
+  }
+.main a span::before {
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	content: '';
+	width: 6px;
+	height: 6px;
+	margin-left: -3px;
+	background-color: #fff;
+	border-radius: 100%;
+	-webkit-animation: sdb10 2s infinite;
+	animation: sdb10 2s infinite;
+	box-sizing: border-box;
+  }
+  @-webkit-keyframes sdb10 {
+	0% {
+	  -webkit-transform: translate(0, 0);
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 1;
+	}
+	80% {
+	  -webkit-transform: translate(0, 20px);
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  @keyframes sdb10 {
+	0% {
+	  transform: translate(0, 0);
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 1;
+	}
+	80% {
+	  transform: translate(0, 20px);
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }

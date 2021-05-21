@@ -1,21 +1,25 @@
+// setTimeout(function() {
+//     const loading = document.querySelector('.loading');
+//     const main = document.querySelector('.main');
+//     loading.style.display = "none";
+//     main.style.display = "block";
+   
+// }, 3000);
+
 setTimeout(function() {
-    const loading = document.querySelector('.loading');
-    const main = document.querySelector('.main');
-    loading.style.display = "none";
-    main.style.display = "block";
-   setTimeout(function() {
-        var top = document.getElementsByClassName("top");
-        var bottom = document.getElementsByClassName("bottom");
-        [...top].map((i) => {
-            i.style.transform = 'rotateY(0deg)'
-        });
-        [...bottom].map((i) => {
-            i.style.transform = 'rotateY(180deg)'
-        });
-   }, 1000);
-}, 2000);
-
-
+  var top = document.getElementsByClassName("top");
+  var bottom = document.getElementsByClassName("bottom");
+  var cards = document.querySelector('.cards');
+  cards.style.left = "50%";
+  var cards2 = document.querySelector('.cards_2');
+  cards2.style.left = "5%";
+  [...top].map((i) => {
+      i.style.transform = 'rotateY(0deg)'
+  });
+  [...bottom].map((i) => {
+      i.style.transform = 'rotateY(-180deg)'
+  });
+}, 1500);
 
 
 
@@ -50,4 +54,34 @@ $(window).on('mousemove click', function(e) {
 });
 
 moveBackground();
+
+
+
+
+$('.btn').on('click',function(e) {
+  document.querySelector('.btn_1').style.display = 'block';
+  document.querySelector('.btn_2').style.display = 'block';
+  if(this.hash == '#form'){
+    document.querySelector('.btn_1').style.display = 'none';
+    document.querySelector('.main_blur').style.display = 'none';
+    setTimeout(function(){
+      document.querySelector('.overlay').style.display = 'block';
+    },500);
+  }
+  if(this.hash == '#landing_page'){
+    document.querySelector('.btn_2').style.display = 'none';
+    setTimeout(function(){
+      document.querySelector('.overlay').style.display = 'none';
+    },200);
+  }
+
+  if(this.hash !== ''){
+    e.preventDefault();
+    const hash = this.hash;
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 1500);
+  };
+});
+
 

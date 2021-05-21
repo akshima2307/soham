@@ -11,7 +11,7 @@
 	transform: translate(-50%,-50%); 
   }
   .loading_div{
-	 width: 200px;  height: 300px;
+	 width: 230px;  height: 250px;
 	 border-radius: 10px;
 	 background: #fff;
 	 animation: animate 2s infinite linear;
@@ -43,105 +43,182 @@
 :root {
 	font-size: 18px;
 	--cardW: 16em;
-	--cardH: 24em;
+	--cardH: 18em;
 	--cardZInc: 2em;
 }
 body {
 	font: 1em "Open Sans", sans-serif;
-	height: 100vh;
 	overflow: hidden;
 }
+/* header */
+header {
+	background-color: transparent;
+	position: relative;
+	z-index: 100;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+			justify-content: space-between;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	padding: 0 28px 0 24px;
+	height: 12vh;
+  }
+  
 
-main {
-	display: none;
+  
+header nav {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+}
+  
+header nav ul li {
+	list-style: none;
+	padding: 16px;
+}
+  
+header nav ul li a {
+	text-decoration: none;
+	font-size: 1.1rem;
+	color: #111;
+	font-weight: 700;
+}
+  
+header nav ul li a:hover {
+	text-decoration: underline;
+}
+  
+header nav .buttons {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin-left: 24px;
+}
+  
+header nav .buttons a {
+	text-decoration: none;
+	font-size: 1.1rem;
+	font-weight: 500;
+	padding: 11px 12px;
+	border-radius: 24px;
+	border: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+}
+  
+header nav .buttons .login {
+	color: #fff;
+	background: #e74c3c;
+}
+  
+header nav .buttons .signup {
+	margin-left: 16px;
+	color: black;
+}
+.header_div{
+	display: flex;
+	align-items: center;
+}
+.header_img:not(:last-child){
+	margin-right: 1rem;
+}
+.header_img-1,.header_img-3{
+	width: 3rem;
+	height: 3rem;
+	object-fit: contain;
+}
+.header_img-2{
+	width: 8rem;
+	height: 5rem;
+	object-fit: contain;
+}
+.header_div > h3{
+	font-size: 1.5rem;
+	font-weight: 100;
+	color: #3d3d3d;
+}
+
+
+/* Main Card Conatiner */
+.main_container{
+	overflow: hidden;
+}
+.main {
 	margin: auto;
 	position: relative;
-	height: 100vh;
+	height: 88vh;
 	width: 100vw;
 }
-.content{
-	background: white;
-	display: block;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%,-50%);
-	z-index: 100;
-	text-align: center;
-	padding: 5rem 3rem;
-}
-.content > h1{
-	font-family: 'Dancing Script', cursive;
-	padding-top: 2rem;
-	font-size: 2.4rem;
-}
-.content > p{
-	font-size: 1rem;
-	margin: 1rem auto;
-	width: 80%;
-}
-.content > a{
-	display: block;
-    background: #e60023;
-    color: white;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    margin-top: 7rem;
-}
-.content > img{
-	width: 4rem;
+.main_2{
+	height: 100vh;
 }
 /* Grid */
 .cards, .stack {
 	transform-style: preserve-3d;
 }
 .cards {
-	--scroll: 0;
-	display: grid;
-	grid-template: repeat(36, var(--cardH)) / var(--cardW);
-	grid-gap: 1.5em;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) rotateX(45deg) rotateZ(45deg) translateY(-25%);
-	transform-origin: 50% 0;
+    display: grid;
+    grid-template: repeat(36, var(--cardH)) / var(--cardW);
+    row-gap: 4rem;
+    column-gap: 3rem;
+    position: fixed;
+    left: 75%;
+    transform:  rotateX(43deg) rotateZ(58deg);
+    transform-origin: 50% 0;
 }
+
+
 
 /* Card hover */
 .stack:hover {
-	transform: translateZ(3rem);
+	transform: translateZ(4rem);
 }
 /* Other card styles */
 .stack {
+	width: 100%;
+	height: 100%;
 	display: block;
 	position: relative;
 	perspective: 150rem;
     -moz-perspective: 150rem;
-	transition: all .2s ease;
+	transition: all 0.2s;
+	
+	
+	cursor: pointer;
 }
 .card {
-	background-size: 200% 200%;
-	box-shadow: -1px -1px 0 rgba(0,0,0,0.2) inset;
-	color: #000;
-	position: absolute;
-	transition: all 0.3s;
+	position: relative;
 	width: 100%;
 	height: 100%;
-	transition: all .8s ease;
+	transition: all 1s;
+	border-radius: 12px;
 	overflow: hidden;
 	-webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    border-radius: 13px;
+	box-shadow: 0 1rem 2rem rgba(0,0,0,0.5);
 }
 .top {
-	z-index: 4;
 	transform: rotateY(180deg);
 }
-.bottom {
-	transform: rotateY(0deg);
-	background: white;
-	position: relative;
-	border: 1px solid #999;
+.bottom{
+	background-color: white;
 }
+
 
 .top > img{
 	width: 100%;
@@ -176,7 +253,7 @@ main {
 }
 @media screen and (min-width: 1281px) {
 	.cards {
-		grid-template: repeat(8, var(--cardH)) / repeat(5, var(--cardW));
+		grid-template: repeat(5, var(--cardH)) / repeat(5, var(--cardW));
 	}
 }
 
@@ -188,63 +265,41 @@ main {
 }
 
 
-.main a {
-	padding-top: 60px;
-  }
-.main a span {
+
+.btn{
 	position: absolute;
-	top: 80%;
-	left: 50%;
-	width: 40px;
-	height: 60px;
-	margin-left: -15px;
-	border: 2px solid #fff;
+    left: 50%;
+	transform: translate(-50%,-7%);
+    width: 55px;
+    height: 55px;
 	border-radius: 50px;
 	box-sizing: border-box;
-  }
-.main a span::before {
+	background-color: #e74c3c;
+	z-index: 100;
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+.btn_1{
+	bottom: 10%;
+}
+.btn_2{
+	top: 7%;
+}
+.btn i{
 	position: absolute;
-	top: 10px;
+	top: 50%;
 	left: 50%;
-	content: '';
-	width: 6px;
-	height: 6px;
-	margin-left: -3px;
-	background-color: #fff;
-	border-radius: 100%;
-	-webkit-animation: sdb10 2s infinite;
-	animation: sdb10 2s infinite;
-	box-sizing: border-box;
-  }
-  @-webkit-keyframes sdb10 {
-	0% {
-	  -webkit-transform: translate(0, 0);
-	  opacity: 0;
-	}
-	40% {
-	  opacity: 1;
-	}
-	80% {
-	  -webkit-transform: translate(0, 20px);
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 0;
-	}
-  }
-  @keyframes sdb10 {
-	0% {
-	  transform: translate(0, 0);
-	  opacity: 0;
-	}
-	40% {
-	  opacity: 1;
-	}
-	80% {
-	  transform: translate(0, 20px);
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 0;
-	}
-  }
+	transform: translate(-50%,-50%);
+	color: white;
+	font-size: 1.3rem;
+}
+.btn_2 i{
+	transform:translate(-50%,-50%) rotate(180deg);
+}
+.main_blur{
+	position: fixed;
+	bottom: 0;
+	height: 200px;
+	background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+	width: 100vw;
+}

@@ -266,7 +266,7 @@ header nav .buttons .signup {
 
 
 
-.btn{
+.button{
 	position: absolute;
     left: 50%;
 	transform: translate(-50%,-7%);
@@ -279,13 +279,13 @@ header nav .buttons .signup {
 	cursor: pointer;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
-.btn_1{
+.button_1{
 	bottom: 10%;
 }
-.btn_2{
+.button_2{
 	top: 7%;
 }
-.btn i{
+.button i{
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -293,7 +293,7 @@ header nav .buttons .signup {
 	color: white;
 	font-size: 1.3rem;
 }
-.btn_2 i{
+.button_2 i{
 	transform:translate(-50%,-50%) rotate(180deg);
 }
 .main_blur{

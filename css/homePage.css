@@ -427,6 +427,7 @@ legend {
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 2rem;
+    position: relative;
 }
 .post-info > img{
     width: 3rem;
@@ -437,6 +438,11 @@ legend {
     font-size: 0.9rem;
     color: #3d3d3d;
     font-weight: 600;
+}
+.post-info > small{
+    position: absolute;
+    right: 5%;
+    font-size: 1rem;
 }
 /* Post Media queries */
 @media(max-width: 1020px){

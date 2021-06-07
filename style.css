@@ -49,6 +49,7 @@
 body {
 	font: 1em "Open Sans", sans-serif;
 	overflow: hidden;
+	transition: all 2s ease-in-out;
 }
 /* header */
 header {
@@ -275,12 +276,13 @@ header nav .buttons .signup {
 	border-radius: 50px;
 	box-sizing: border-box;
 	background-color: #e74c3c;
-	z-index: 100;
+	z-index: 10000;
 	cursor: pointer;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 .button_1{
 	bottom: 10%;
+	animation: bounce 1.5s ease-in infinite;
 }
 .button_2{
 	top: 7%;
@@ -297,9 +299,22 @@ header nav .buttons .signup {
 	transform:translate(-50%,-50%) rotate(180deg);
 }
 .main_blur{
+	display: block;
 	position: fixed;
 	bottom: 0;
 	height: 200px;
 	background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
 	width: 100vw;
 }
+
+@keyframes bounce {
+	0%,
+	100%{
+	  transform: translateY(0);
+	}
+	50% {
+	  transform: translateY(-20px);
+	}
+  }
+  
+

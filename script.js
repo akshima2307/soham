@@ -59,20 +59,23 @@ moveBackground();
 
 
 $('.btn').on('click',function(e) {
-  document.querySelector('.btn_1').style.display = 'block';
-  document.querySelector('.btn_2').style.display = 'block';
+  document.querySelector('.button_1').style.display = 'block';
+  document.querySelector('.button_2').style.display = 'block';
   if(this.hash == '#form'){
-    document.querySelector('.btn_1').style.display = 'none';
+    document.querySelector('.button_1').style.display = 'none';
     document.querySelector('.main_blur').style.display = 'none';
     setTimeout(function(){
       document.querySelector('.overlay').style.display = 'block';
     },500);
   }
   if(this.hash == '#landing_page'){
-    document.querySelector('.btn_2').style.display = 'none';
+    document.querySelector('.button_2').style.display = 'none';
     setTimeout(function(){
       document.querySelector('.overlay').style.display = 'none';
     },200);
+    setTimeout(function(){
+      document.querySelector('.main_blur').style.display = 'block';
+    },2000);
   }
 
   if(this.hash !== ''){
@@ -84,4 +87,28 @@ $('.btn').on('click',function(e) {
   };
 });
 
+$(window).bind('mousewheel', function(event) {
+  document.querySelector('.button_2').style.display = 'block';
+  document.querySelector('.button_1').style.display = 'block';
+  document.querySelector('.main_blur').style.opacity = '1';
+  if (event.originalEvent.wheelDelta >= 0) {
+    document.getElementsByTagName("BODY")[0].style.transform = 'translateY(0%)';
 
+    document.querySelector('.button_2').style.display = 'none';
+    setTimeout(function(){
+      document.querySelector('.overlay').style.display = 'none';
+    },200);
+    setTimeout(function(){
+      document.querySelector('.main_blur').style.display = 'block';
+    },2000);
+  }
+  else {
+    document.getElementsByTagName("BODY")[0].style.transform = 'translateY(-50%)';
+    document.querySelector('.main_blur').style.display = 'none';
+    document.querySelector('.main_blur').style.opacity = '0';
+    document.querySelector('.button_1').style.display = 'none';
+    setTimeout(function(){
+      document.querySelector('.overlay').style.display = 'block';
+    },1000);
+  }
+  });

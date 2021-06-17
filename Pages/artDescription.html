@@ -11,25 +11,41 @@
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/0ccd48ad8b.js" crossorigin="anonymous"></script>
     <!-- StyleSheets -->
+    <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/artDescription.css">
     <title>Soham</title>
 </head>
 <body>
-    <!-- Navigation Section -->
-    <section class="navigation">
-        <div class="nav">
-            <img src="../img/5-soham.png" alt="">
-            <a class="nav_link nav_active" href="#">Home</a>
-            <i class="fa fa-bars nav_icon" aria-hidden="true"></i>
-            <div class="nav_input">
-                <i class="fas fa-search"></i>
-                <input type="text">
-            </div>
-            <a class="nav_link" href="#">Blog</a>
-            <a class="nav_link" href="#">About us</a>
-            <a class="nav_link" href="#">Contact us</a>
+    <!-- Header Section -->
+    <section class="header">
+        <div class="header_div">
+            <img class="header_img header_img-1" src="../img/5-soham.png" alt="so-ham logo">
+            <img class="header_img header_img-2" src="../img/2-sanskriti.png" alt="">
+            <img class="header_img header_img-3" src="../img/MOC Final LOGO (1).png" alt="MOC logo">
+            <img class="header_img header_img-4" src="../img/4-NGMA - 1.png" alt="NGMA logo">
+        </div>
+        <div class="header_div">
+            <h1 class="header_heading">So'Ham</h1>
+        </div>
+        <div class="header_div header_div-btn">
+            <button class="header_btn header_btn-login"><a href="#">Log in</a></button>
+            <button class="header_btn header_btn-signup"><a href="#">Sign up</a></button>
         </div>
     </section>
+
+    <!-- Navigation Section -->
+    <section class="navigation" id="navBar">
+        <div class="nav">
+            <a class="nav_link nav_active" href="#">Home</a>
+            <i class="fa fa-bars nav_icon" aria-hidden="true"></i>
+            <a class="nav_link" href="./theme.html">Theme of the month</a>
+            <a class="nav_link" href="./blog.html">Blog</a>
+            <a class="nav_link" href="./museumCorner.html">Museum's Corner</a>
+            <a class="nav_link" href="./about.html">About us</a>
+            <a class="nav_link" href="./contact.html">Contact us</a>
+        </div>
+    </section>
+
     <!-- Art Description -->
     <section class="art">
         <a href="./homePage.html" class="back_icon"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
@@ -356,6 +372,23 @@
                 myTabs[i].addEventListener("click", myTabClicks)
             }
         });
+    </script>
+    <script>
+        var height = document.getElementById("navBar").offsetTop;
+        window.onscroll = function(){
+        if (window.pageYOffset > height) {
+            document.getElementById('navBar').classList.add('fixed');
+            [...document.querySelectorAll('.nav_link')].map(function(el){
+                el.style.color = "white";
+            })
+        }
+        else {
+            document.getElementById('navBar').classList.remove('fixed');
+            [...document.querySelectorAll('.nav_link')].map(function(el){
+                el.style.color = "#3d3d3d";
+            })
+        }
+        };
     </script>
 </body>
 </html>

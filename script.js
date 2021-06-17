@@ -111,4 +111,8 @@ $(window).bind('mousewheel', function(event) {
       document.querySelector('.overlay').style.display = 'block';
     },1000);
   }
-  });
+});
+
+
+
+

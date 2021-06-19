@@ -18,7 +18,7 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 2rem 5rem;
+    padding: 0rem 3rem;
 }
 .header_div{
     display: flex;

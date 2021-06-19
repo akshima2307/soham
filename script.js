@@ -93,7 +93,6 @@ $(window).bind('mousewheel', function(event) {
   document.querySelector('.main_blur').style.opacity = '1';
   if (event.originalEvent.wheelDelta >= 0) {
     document.getElementsByTagName("BODY")[0].style.transform = 'translateY(0%)';
-
     document.querySelector('.button_2').style.display = 'none';
     setTimeout(function(){
       document.querySelector('.overlay').style.display = 'none';

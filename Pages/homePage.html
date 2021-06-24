@@ -397,10 +397,35 @@
     </section>  
 
     <!-- Upload Button -->
-    <button class="upload_btn">
-        <a href=""><i class="fa fa-plus upload_btn-icon" aria-hidden="true"></i></a>
+    <button class="upload_btn dropdown">
+        <i class="fa fa-plus upload_btn-icon dropbtn" onclick="myFunction()" aria-hidden="true"></i>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i>Image</a>
+          <a href="#"><i class="fa fa-file-video-o" aria-hidden="true"></i>Video</a>
+          <a href="#"><i class="fa fa-file-audio-o" aria-hidden="true"></i>Audio</a>
+        </div>
     </button>
-    
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+                }
+            }
+        }
+    </script>
     <script src="./script.js"></script>
     <script>
         var height = document.getElementById("navBar").offsetTop;

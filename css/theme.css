@@ -1,5 +1,6 @@
 .theme{
     position: relative;
+    display: block;
 }
 .theme_bg{
     position: absolute;
@@ -11,9 +12,8 @@
     z-index: -10;
 }
 .theme_heading{
-    margin-left: 3rem;
+    text-align: center;
     font-family: 'Means Web,Georgia,Times,Times New Roman,serif';
-    padding-top: 5rem;
     font-size: 3rem;
     font-weight: 400;
     color: white;
@@ -21,18 +21,65 @@
 .theme_img{
     width: 45rem;
     height: 32rem;
-    padding-top: 4rem;
-    margin-left: 3rem;
+    padding-top: 2rem;
+    display: block;
+    margin: auto;
 }
 .theme_content{
-    width: 65%;
+    width: 70%;
     text-align: justify;
-    margin-top: 3rem;
-    margin-left: 3rem;
+    margin: 3rem auto;
 }
 .theme_content > p{
     font-size: 1.3rem;
     margin-bottom: 1rem;
     letter-spacing: 0.5px;
     line-height: 27px;
+}
+
+.theme_calender{
+    padding: 3rem;
+}
+.timeline_nav{
+    width: 60rem;
+    margin: auto;
+    overflow-x: scroll;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 10px 20px rgba(231, 76, 60,0.8);
+    border-radius: 10px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    position: relative;
+}
+.timeline_nav::-webkit-scrollbar {
+    display: none;
+  }
+
+.timeline-tab-item{
+    font-size: 1.3rem;
+    margin-right: 3rem;
+    list-style: none;
+    color: #3d3d3d;
+    width: 10%;
+    padding: 0.6rem 1rem;
+}
+
+.timeline-tab-item--active{
+    background-color: #efefef;
+    color: rgb(231, 76, 60);
+}
+
+.timeline_nav > i{
+    position: fixed;
+    font-size: 1.3rem;
+    margin: auto;
+}
+.timeline_nav > i:first-child{
+    margin-left: 1rem;
+}
+.timeline_nav > i:last-child{
+    margin-right: 1rem;
 }

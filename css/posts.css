@@ -1,6 +1,6 @@
 /* Posts Section */
 .posts{
-    margin: 4rem 4rem 0rem 5rem;
+    margin: 4rem 4rem 0rem 4rem;
 }
 .posts-container{
     column-count: 4;

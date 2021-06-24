@@ -54,10 +54,6 @@
     display: flex;
     align-items: center;
 }
-.art_share > i{
-    font-size: 1.2rem;
-    margin-left: 2rem;
-}
 .art_save{
     padding: 0.8rem 2rem;
     font-size: 1.2rem;
@@ -192,6 +188,7 @@
     margin-right: 2rem;
 }
 .comment > span{
+    position: relative;
     padding: 0.6rem;
     width: 90%;
     font-size: 0.9rem;
@@ -211,20 +208,9 @@
     letter-spacing: 0.3px;
     color: black;
 }
-.comment_reply{
-    display: flex;
-    margin-left: 6rem;
-    margin-bottom: 1rem;
-}
-.comment_reply > i{
-    font-size: 1.1rem;
-    color: #3d3d3d;
-    cursor: pointer;
-    margin-right: 1rem;
-}
 .user_comment{
     display: flex;
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 .user_comment > img{
     width: 3rem;
@@ -369,3 +355,63 @@
         width: 60%;
     }
 }
+
+
+/* Share Button */
+
+/* Remove Reset for integration */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: none;
+    box-shadow: none;
+    color: black;
+  }
+  /* End Reset */
+  .share-menu {
+    display: flex;
+    position: relative;
+  }
+  .share-menu-toggle {
+    position: relative;
+    height: 50px;
+    cursor: pointer;
+    background: transparent;
+  }
+  .share-menu-toggle:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  .share-logo {
+    font-size: 1.2rem;
+    margin-left: 2rem;
+  }
+  .share-items {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    top: -20px;
+    transition: all 200ms ease-in-out;
+    position: absolute;
+    left: 60px;
+    padding: 0.7rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  .open .share-items {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+  .share-item {
+    margin-right: 10px;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  

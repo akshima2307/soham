@@ -50,41 +50,25 @@ body{
     transition: all 0.2s;
     outline: none;
 }
-.header_btn > a{
+.header_div-userImg > img{
+    padding: 0.1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.header_div-submit{
+    font-size: 1.3rem;
     text-decoration: none;
-    font-size: 1.1rem;
-}
-.header_btn-login{ 
-    background-color: white;
-    border: 2px solid #e74c3c;
-}
-.header_btn-login > a{
-    color: #e74c3c;
-}
-.header_btn-signup{
     background-color: #e74c3c;
+    color: white;
     border: none;
     margin-left: 1rem;
-    border: 2px solid white;
+    padding: 0.6rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-.header_btn-signup > a{
-    color: white;
-}
-.header_btn-login:hover{
-    background-color: rgb(245, 244, 244);
-    transform: translateY(-0.2rem);
-}
-.header_btn-login:hover a{
-    color: #e74c3c;
-}
-.header_btn-signup:hover{
-    opacity: 0.7;
-    border: 2px solid #e74c3c;
-    transform: translateY(-0.2rem);
-}
-.header_btn-signup:hover a{
-    color: #fff;
-}
+
 
 /*Header Media queries */
 @media(max-width: 1024px){
@@ -136,13 +120,11 @@ body{
     text-decoration: none;
     font-size: 1.15rem;
     color: #3d3d3d;
-    transition: all 0.2s;
     padding: 0.8rem 0;
+    transition: all 0.3s;
 }
 .nav_link:hover{
-    background-color: #E8E8E8;
-    border-radius: 5px;
-    padding: 0.8rem;
+    text-decoration: revert;
 }
 .nav_link:not(:last-child){
     margin-right: 4rem;

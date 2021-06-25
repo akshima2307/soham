@@ -83,3 +83,56 @@
 .timeline_nav > i:last-child{
     margin-right: 1rem;
 }
+
+
+
+  /* End Reset */
+  .share-menu {
+    display: flex;
+    position: relative;
+  }
+  .share-menu-toggle {
+    position: relative;
+    height: 50px;
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+  .share-menu-toggle:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  .share-logo {
+    font-size: 2rem;
+    color: white;
+    margin-left: 2rem;
+  }
+  .share-items {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    top: -20px;
+    transition: all 200ms ease-in-out;
+    position: absolute;
+    left: 60px;
+    padding: 0.7rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background-color: #fff;
+  }
+  .open .share-items {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+  .share-item {
+    margin-right: 10px;
+    font-size: 2rem;
+    padding: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }

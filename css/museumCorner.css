@@ -73,21 +73,22 @@
     font-weight: 600;
 }
 .post-info-likesView{
+    width: 100%;
     display: flex;
     align-items: center;
-    padding: 1rem 0;
     background-color: rgb(243, 242, 242);
+    padding: 1rem 0;
 }
-.post-info-likesView > small{
+
+.post-info-likesView > button{
     font-size: 1rem;
     width: 50%;
     text-align: center;
+    border: none;
+    background-color: rgb(243, 242, 242);
+    color: #3d3d3d;
 }
-.post-info-likesView > small > i{
-    font-size: 1.1rem;
-    margin-right: 0.5rem;
-}
-.post-info-likesView > small:not(:last-child){
+.post-info-likesView > button:not(:last-child){
     border-right: 1px solid #3d3d3d;
 }
 .post-card-container{

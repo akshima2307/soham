@@ -12,9 +12,7 @@
 }
 .events_heading{
     padding: 2rem 0 0 0;
-    background-image: linear-gradient(to right bottom, #2d4386, #28b485);;
-    -webkit-background-clip: text;
-    color: transparent;
+    color: #e74c3c;
     position: relative;
     font-size: 2.4rem;
     font-weight: 500;
@@ -25,8 +23,7 @@
     margin: 0 3rem;
     border-bottom: 1px solid #e6e5e5;
     border-top: 1px solid #e6e5e5;
-    background-image:  linear-gradient(to right, #2d4386, #4060bf);
-
+    background-color: #e74c3c;
 }
 .events_navigation > a:not(:last-child){
     margin-right: 1rem;
@@ -87,7 +84,7 @@
   }
   
  .dropdown ul li:hover{
-    color: #2d4386;
+    color: #e74c3c;
   }
   
 .dropdown:before{
@@ -96,7 +93,7 @@
     top: 18px;
     right: 20px;
     border: 8px solid;
-    border-color: #2d4386 transparent transparent transparent;
+    border-color: #e74c3c transparent transparent transparent;
 }
 
 
@@ -125,7 +122,7 @@
 }
 .events_card-content > span{
   font-size: 1.5rem;
-  color: #304991;
+  color: #e74c3c;
   display: block;
   margin-bottom: 0.7rem;
 }
